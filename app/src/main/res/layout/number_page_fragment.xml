@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:textAlignment="center"
-        android:textSize="100dp">
+        android:textSize="@dimen/number_page_text_size">
     </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
