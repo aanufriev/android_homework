@@ -36,9 +36,10 @@ public class NumberViewHolder extends RecyclerView.ViewHolder {
 
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-                transaction.replace(R.id.main_fragment_container, NumberPageFragment.getInstance(data));
-                transaction.addToBackStack(null);
-                transaction.commit();
+                transaction
+                        .replace(R.id.main_fragment_container, NumberPageFragment.getInstance(data))
+                        .addToBackStack(null)
+                        .commit();
             }
         });
     }
