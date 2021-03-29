@@ -14,7 +14,12 @@ import androidx.fragment.app.Fragment;
 public class NumberPageFragment extends Fragment {
     private Integer number = 0;
     private static final String NUMBER_STATE_KEY = "number_state_key";
-    private static NumberPageFragment sInstance;
+
+    public static NumberPageFragment Create(Integer number) {
+        NumberPageFragment fragment = new NumberPageFragment();
+        fragment.number = number;
+        return fragment;
+    }
 
     @Nullable
     @Override
@@ -42,14 +47,5 @@ public class NumberPageFragment extends Fragment {
         super.onSaveInstanceState(outState);
 
         outState.putInt(NUMBER_STATE_KEY, number);
-    }
-
-    public synchronized static NumberPageFragment getInstance(Integer number) {
-        if (sInstance == null) {
-            sInstance = new NumberPageFragment();
-        }
-
-        sInstance.number = number;
-        return sInstance;
     }
 }
