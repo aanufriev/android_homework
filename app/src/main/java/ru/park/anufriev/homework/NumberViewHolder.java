@@ -34,7 +34,7 @@ public class NumberViewHolder extends RecyclerView.ViewHolder {
                 FragmentManager fragmentManager = ((AppCompatActivity) numberTextView.getContext()).getSupportFragmentManager();
 
                 fragmentManager.beginTransaction()
-                        .replace(R.id.main_fragment_container, NumberPageFragment.Create(data))
+                        .replace(R.id.main_fragment_container, NumberPageFragment.getInstance(data))
                         .addToBackStack(null)
                         .commit();
             }

@@ -15,7 +15,7 @@ public class NumberPageFragment extends Fragment {
     private Integer number = 0;
     private static final String NUMBER_STATE_KEY = "number_state_key";
 
-    public static NumberPageFragment Create(Integer number) {
+    public static NumberPageFragment getInstance(Integer number) {
         NumberPageFragment fragment = new NumberPageFragment();
         fragment.number = number;
         return fragment;
