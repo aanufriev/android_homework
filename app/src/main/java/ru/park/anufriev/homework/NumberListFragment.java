@@ -47,6 +47,7 @@ public class NumberListFragment extends Fragment {
             public void onClick(View v) {
                 adapter.addNumber();
                 itemsCount++;
+                recyclerView.smoothScrollToPosition(itemsCount);
             }
         });
 
@@ -57,5 +58,13 @@ public class NumberListFragment extends Fragment {
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(ITEMS_COUNT_KEY, itemsCount);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            itemsCount = savedInstanceState.getInt(ITEMS_COUNT_KEY);
+        }
     }
 }

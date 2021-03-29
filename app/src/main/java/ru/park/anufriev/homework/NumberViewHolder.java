@@ -7,7 +7,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class NumberViewHolder extends RecyclerView.ViewHolder {
@@ -34,9 +33,7 @@ public class NumberViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 FragmentManager fragmentManager = ((AppCompatActivity) numberTextView.getContext()).getSupportFragmentManager();
 
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-                transaction
+                fragmentManager.beginTransaction()
                         .replace(R.id.main_fragment_container, NumberPageFragment.getInstance(data))
                         .addToBackStack(null)
                         .commit();
